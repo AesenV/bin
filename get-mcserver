@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 if [[ -z "$1" || -z "$2" ]]; then
 	echo get-mcserver: usage: get-mcserver \<version\> \<outfile\>
 	exit 1
