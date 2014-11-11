@@ -1,2 +1,6 @@
 #!/bin/sh
+if [[ -z "$1" || -z "$2" ]]; then
+	echo get-mcserver: usage: get-mcserver \<version\> \<outfile\>
+	exit 1
+fi
 curl https://s3.amazonaws.com/Minecraft.Download/versions/$1/minecraft_server.$1.jar -o $2
