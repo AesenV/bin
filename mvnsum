@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ -z "$1" ]; then
+	echo mvnsum: usage: mvnsum \<file\>
+	exit 1
+fi
+
+SHA1=`sha1sum $1 |awk '{ print $1; }'`
+MD5=`md5sum $1 |awk '{ print $1; }'`
+echo SHA1: $SHA1
+echo MD5:  $MD5
+echo -n $SHA1 > $1.sha1
+echo -n $MD5 > $1.md5

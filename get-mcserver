@@ -1,0 +1,2 @@
+#!/bin/sh
+curl https://s3.amazonaws.com/Minecraft.Download/versions/$1/minecraft_server.$1.jar -o $2

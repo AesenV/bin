@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ -z "$1" ]; then
+	echo parallel: usage 'parallel <command-list>'
+	exit 1
+fi
+while read CMD; do
+    echo $CMD;
+    $CMD &
+    while [ `jobs | wc -l` -gt 7 ]; do
+        sleep 5;
+    done
+done < $1
