@@ -1,0 +1,8 @@
+if [[ -z "$1" || -z "$2" ]]; then
+	echo ytgif: usage: ytgif \<url\> \<outfile\>
+	exit 1
+fi
+URL=`livestreamer -j $1 360p |jq -r .url`
+DATE=`date '+%s.%N'`
+curl $URL | ffmpeg -f mp4 -i /dev/stdin -f gif -pix_fmt rgb24 -an -vsync drop -r 15 /tmp/$DATE.gif
+gifsicle --optimize /tmp/$DATE.gif > $2

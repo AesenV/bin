@@ -17,6 +17,21 @@ Dependencies:
 
 Downloads a video from YouTube, converting it on the fly to Ogg Vorbis and saving it to a file. It then runs vorbisgain on the result to add ReplayGain information.
 
+ytgif
+-----
+`ytgif <youtube-url> <outfile>`  
+Example: `ytgif http://www.youtube.com/watch?v=QEzhxP-pdos jaypeg.gif`  
+Dependencies:
+ * curl
+ * livestreamer
+ * jq
+ * ffmpeg
+ * gifsicle
+
+Downloads a video from YouTube, converting it on the fly to GIF and saving it to a file. It then runs gifsicle on the output to make it less gigantic.  
+Always makes 15 FPS gifs, and tries to grab the 360p stream from YouTube.  
+**Warning**: This script converts the *entire* video to GIF. It is intended for short videos.
+
 get-mcserver
 ------------
 `get-mcserver <version> <outfile>`  
