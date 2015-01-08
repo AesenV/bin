@@ -9,7 +9,6 @@ ytrip
 `ytrip <youtube-url> <outfile>`  
 Example: `ytrip http://www.youtube.com/watch?v=dQw4w9WgXcQ AmazingSong.ogg`  
 Dependencies:
- * curl
  * livestreamer
  * jq
  * ffmpeg
