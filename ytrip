@@ -4,5 +4,5 @@ if [[ -z "$1" || -z "$2" ]]; then
 	exit 1
 fi
 URL=`livestreamer -j $1 best |jq -r .url`
-curl $URL | ffmpeg -f mp4 -i /dev/stdin -f ogg -vn -acodec libvorbis $2
+ffmpeg -f mp4 -i $URL -f ogg -vn -acodec libvorbis $2
 vorbisgain $2
