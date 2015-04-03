@@ -64,3 +64,11 @@ install-prompt
 
 Installs my custom prompt. It looks pretty.  
 ![Screenshot of the prompt](http://i.imgur.com/WrfOXCP.png)
+
+disclaimer
+----------
+`disclaimer [size]`
+
+Generates a compound disclaimer that is `[size]` entries long.
+Dependencies:
+ - fortune

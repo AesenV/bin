@@ -1,0 +1,19 @@
+#!/bin/bash
+if [ -n "$1" ]; then
+	COUNT=$1
+else
+	COUNT=`seq 10 50 | shuf -n 1`
+fi
+echo Generating a ${COUNT}x compound disclaimer... 1>&2
+FILE=/tmp/`date '+%s%N'`.dsclmr
+for I in `seq 0 $COUNT`; do
+	fortune disclaimer >> $FILE
+done
+uniq $FILE $FILE.uniq
+while read LINE; do
+	echo -n $LINE
+	echo -n ' '
+done < $FILE.uniq
+echo
+rm $FILE
+rm $FILE.uniq
